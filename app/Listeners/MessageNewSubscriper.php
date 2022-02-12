@@ -16,22 +16,12 @@ class MessageNewSubscriper
     }
 
     /**
-     * Handle user login events.
+     * Handle new message events.
      */
-    public function handleMessage($event)
+    public function messageNewEvent($event)
     {
-        error_log('handleMessage .');
+        error_log('a new meassage sent .');
     }
-
-
-    /**
-     * Handle user login events.
-     */
-    public function restoreMessage($event)
-    {
-        error_log('restoreMessage .');
-    }
-
 
     /**
      * Register the listeners for the subscriber.
@@ -40,21 +30,9 @@ class MessageNewSubscriper
      */
     public function subscribe($events)
     {
-        error_log('Some message here.');
-
         $events->listen(
             'Webklex\IMAP\Events\MessageNewEvent',
-            'App\Listeners\MessageNewSubscriper@handleMessage'
-        );
-        $events->listen(
-            'Webklex\IMAP\Events\MessageMovedEvent',
-            'App\Listeners\MessageNewSubscriper@handleMessage'
-
-        );
-        $events->listen(
-            'Webklex\IMAP\Events\MessageRestoredEvent',
-            'App\Listeners\MessageNewSubscriper@restoreMessage'
-
+            'App\Listeners\MessageNewSubscriper@messageNewEvent'
         );
     }
 }

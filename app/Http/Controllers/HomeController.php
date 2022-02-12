@@ -35,7 +35,7 @@ class HomeController extends Controller
         return $client;
     }
 
-    function messages(Request $request, $path)
+    function index(Request $request, $path = null)
     {
         $client = $this->getCurrentClient();
 
@@ -43,8 +43,14 @@ class HomeController extends Controller
         /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
         $folders = $client->getFolders();
 
-        //get specific folder
-        $folder = $client->getFolderByPath($path);
+        if ($path) {
+            //get specific folder
+            $folder = $client->getFolderByPath($path);
+        } else {
+            //get specific folder
+            $folder = $folders->first();
+            $path = $folder->path;
+        }
 
         //Get all Messages of the current Mailbox $folder
         /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */

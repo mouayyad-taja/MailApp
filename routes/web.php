@@ -14,13 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/folder/{path}', [HomeController::class, 'messages'])->name('folder');
+Route::get('/folder/{path}', [HomeController::class, 'index'])->name('folder');
 Route::get('/compse', [HomeController::class, 'composeForm'])->name('compose');
 Route::post('/compose', [HomeController::class, 'compose'])->name('composePost');

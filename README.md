@@ -22,6 +22,14 @@ A simple dashboard for receiving email and sending emails
 &nbsp; 
 &nbsp; 
 
+## Tools And Resources Used
+- [Laravel framework](https://laravel.com/).
+- [php-imap](https://github.com/Webklex/php-imap) - PHP-IMAP is a wrapper for common IMAP communication without the need to have the php-imap module installed / enabled. The protocol is completely integrated and therefore supports IMAP IDLE operation and the "new" oAuth authentication process as well. You can enable the php-imap module in order to handle edge cases, improve message decoding quality and is required if you want to use legacy protocols such as pop3.
+
+
+&nbsp; 
+&nbsp; 
+
 
 # Installation
 

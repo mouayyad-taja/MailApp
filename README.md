@@ -43,7 +43,7 @@ A simple dashboard for receiving email and sending emails
     - npm install && npm run dev
     - php artisan serve
 * You can change the used email in class App\Http\Controllers\HomeController inside currentConfig array
-* open your browser on link http://localhost:8000/
+* Open the browser on http://localhost:8000/ and test the services
 
 &nbsp; 
 &nbsp; 
